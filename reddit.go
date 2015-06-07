@@ -24,7 +24,12 @@ Slides:     https://talks.golang.org/2012/tutorial.slide#1
 package reddit
 
 // import statement
-import "github.com/marlenunez/reddit"
+import (
+    "encoding/json"
+    "errors"
+    "fmt"
+    "net/http"
+)
 
 type response struct {
     Data struct {
