@@ -56,7 +56,7 @@ func (i Item) String() string {
     default:
         com = fmt.Sprintf(" (%d comments)", i.Comments)
     }
-    return fmt.Sprintf("%s%s\n%s", i.Title, com, i.URL)
+    return fmt.Sprintf("%s\n%s\t%s\n", i.Title, com, i.URL)
 }
 
 // Get fetches the most recent Items posted to the specified subreddit.
