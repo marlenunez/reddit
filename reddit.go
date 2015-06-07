@@ -50,11 +50,11 @@ func (i Item) String() string {
     com := ""
     switch i.Comments {
     case 0:
-        // nothing
+        com = "(no comments)"
     case 1:
-        com = " (1 comment)"
+        com = "(1 comment)"
     default:
-        com = fmt.Sprintf(" (%d comments)", i.Comments)
+        com = fmt.Sprintf("(%d comments)", i.Comments)
     }
     return fmt.Sprintf("%s\n%s\t%s\n", i.Title, com, i.URL)
 }
