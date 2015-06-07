@@ -17,14 +17,20 @@ package main
 import (
 	"fmt"
     "log"
+    "os"
     "github.com/marlenunez/reddit"
 )
 
 // function declaration
 func main() {
 
+    sub := os.Args[1]
+    if sub == nil {
+        fmt.Println("Usage: geddit \"subreddit\". Fetching \"golang\"...\n")
+    }
+
 	// fetch the sub reddit
-	items, err := reddit.Get("golang")
+	items, err := reddit.Get(sub)
 
 	// error handing
 	if err != nil {
