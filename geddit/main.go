@@ -33,6 +33,6 @@ func main() {
 
 	for _, item := range items {
 		// print the title of the items
-		fmt.Println(item.Title)
+		fmt.Println(item)
 	}
 }
