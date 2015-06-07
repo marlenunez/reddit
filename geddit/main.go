@@ -25,8 +25,9 @@ import (
 func main() {
 
     sub := os.Args[1]
-    if sub == nil {
+    if sub == "" {
         fmt.Println("Usage: geddit \"subreddit\". Fetching \"golang\"...\n")
+        sub = "golang"
     }
 
 	// fetch the sub reddit
