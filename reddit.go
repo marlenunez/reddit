@@ -46,6 +46,7 @@ type Item struct {
 	Comments int `json:"num_comments"`
 }
 
+// Method for the Item struct
 func (i Item) String() string {
     com := ""
     switch i.Comments {
@@ -68,7 +69,6 @@ func Get(reddit string) ([]Item, error) {
 	// make the request
     resp, err := http.Get(url)                               
     if err != nil {
-    	// nil slice and a non-nil error value
         return nil, err
     }
 
@@ -80,14 +80,12 @@ func Get(reddit string) ([]Item, error) {
     
 	// make an error
     if resp.StatusCode != http.StatusOK {
-    	// nil slice and a non-nil error value
         return nil, errors.New(resp.Status)
     }
 
     r := new(response)                        
     err = json.NewDecoder(resp.Body).Decode(r)
     if err != nil {
-    	// nil slice and a non-nil error value
         return nil, err
     }
 
@@ -101,6 +99,5 @@ func Get(reddit string) ([]Item, error) {
         items[i] = child.Data
     }
 
-    // non-nil slice and a nil error value
     return items, nil
 }
