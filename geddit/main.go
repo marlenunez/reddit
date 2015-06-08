@@ -3,7 +3,7 @@ Copyright 2013 Google Inc.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
-    http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,19 +16,20 @@ package main
 // import statement
 import (
 	"fmt"
-    "log"
-    "os"
-    "github.com/marlenunez/reddit"
+	"log"
+	"os"
+	"github.com/marlenunez/reddit"
 )
 
 // function declaration
 func main() {
 
-    sub := os.Args[1]
-    if sub == "" {
-        fmt.Println("Usage: geddit \"subreddit\". Fetching \"golang\"...\n")
-        sub = "golang"
-    }
+	if len(os.Args) != 1 {
+		fmt.Printf("Usage : %s subreddit\nDefaulting to golang...", os.Args[0])
+		sub = "golang"
+	} else {
+		sub := os.Args[1]
+	}
 
 	// fetch the sub reddit
 	items, err := reddit.Get(sub)
