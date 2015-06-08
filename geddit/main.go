@@ -25,9 +25,8 @@ import (
 func main() {
 
 	var sub string
-
-	if len(os.Args) != 1 {
-		fmt.Printf("Usage : %s subreddit\nDefaulting to golang...", os.Args[0])
+	if len(os.Args) < 2 {
+		fmt.Println("Usage: geddit <subreddit>\nNo subreddit provided, defaulting to golang...")
 		sub = "golang"
 	} else {
 		sub = os.Args[1]
