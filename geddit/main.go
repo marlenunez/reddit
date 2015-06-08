@@ -26,7 +26,7 @@ func main() {
 
 	if len(os.Args) != 1 {
 		fmt.Printf("Usage : %s subreddit\nDefaulting to golang...", os.Args[0])
-		sub = "golang"
+		sub := "golang"
 	} else {
 		sub := os.Args[1]
 	}
