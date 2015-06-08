@@ -24,11 +24,13 @@ import (
 // function declaration
 func main() {
 
+	var sub string
+
 	if len(os.Args) != 1 {
 		fmt.Printf("Usage : %s subreddit\nDefaulting to golang...", os.Args[0])
-		sub := "golang"
+		sub = "golang"
 	} else {
-		sub := os.Args[1]
+		sub = os.Args[1]
 	}
 
 	// fetch the sub reddit
