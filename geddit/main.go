@@ -19,9 +19,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/marlenunez/reddit"
 	"log"
 	"os"
-	"github.com/marlenunez/reddit"
 )
 
 func main() {
